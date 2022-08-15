@@ -1,1 +1,1 @@
-# Finiancial-Inclusivity-in-Africa
+# Financial-Inclusivity-in-Africa
