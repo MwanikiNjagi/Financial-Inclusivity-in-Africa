@@ -1,11 +1,11 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder,MinMaxScaler
 import config
 
 def main():
     df = pd.read_csv(config.Train)
-    df = df.drop(["uniqueid"], axis=1)
+    df = df.drop(["uniqueid","year"], axis=1)
     encoding(df)
     print(df.head())
     print(df.describe())
@@ -21,8 +21,6 @@ def encoding(df):
     LE = LabelEncoder()
     le_encode = ["bank_account", "location_type", "cellphone_access", "gender_of_respondent"]
     df[le_encode] = df[le_encode].apply(LE.fit_transform)
-    #One-hot encoding for everything else
-    
     return df
 
 
