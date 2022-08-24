@@ -7,8 +7,9 @@ from xgboost import XGBClassifier
 from catboost import CatBoostClassifier
 
 def main():
-    df = pd.read_csv(config.Train_clean)
+    df = pd.read_csv(config.Train)
+    print(df.head())
+    print(df.dtypes)
     return df
-
 if __name__ == "__main__":
     main()
